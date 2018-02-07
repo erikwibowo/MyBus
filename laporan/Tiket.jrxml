@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="555" pageHeight="243" orientation="Landscape" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="165a6345-5fc0-4772-a762-c921d92727c0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parLogo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from
+tb_detailtransaksi a, tb_transaksi b, tb_bus c, tb_jadwal d, tb_supir e, 
+tb_kursi f, tb_user g
+where a.id_transaksi=b.id_transaksi and a.id_kursi=f.id_kursi and 
+b.id_bus=c.id_bus and b.id_jadwal=d.id_jadwal and b.id_supir=e.id_supir
+and b.id_user=g.id_user and a.id_detailtransaksi=5]]>
+	</queryString>
+	<field name="id_detailtransaksi" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_kursi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_penumpang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_jadwal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_supir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_bus" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="class_bus" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_tiket" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_polisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_berangkat" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jam_berangkat" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tujuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_supir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_sim" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_hp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomor_kursi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="password" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="243" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="243" backcolor="#6A1B9A" uuid="d6f86a2a-8a99-4c2b-9d94-4ec0bf8c2af3"/>
+				<textField>
+					<reportElement x="194" y="68" width="165" height="20" forecolor="#FFFFFF" uuid="43327d41-46d4-4b8b-ba68-f559f6cda293"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nama_penumpang}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="194" y="130" width="165" height="20" forecolor="#FFFFFF" uuid="b34ede29-6eeb-4fa4-822f-3e1edef8270c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{class_bus}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="194" y="160" width="165" height="20" forecolor="#FFFFFF" uuid="6a52b380-efb7-4dee-bb26-80da11e726c5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Rp "+$F{harga_tiket}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="411" y="68" width="111" height="20" forecolor="#FFFFFF" uuid="c22aabbf-7df3-4b3a-bfc7-5bf9f2c18664"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{no_polisi}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd MMMMM yyyy">
+					<reportElement x="411" y="160" width="111" height="20" forecolor="#FFFFFF" uuid="f55e55bd-0f13-4d20-a971-aeb2431729e0"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tgl_berangkat}]]></textFieldExpression>
+				</textField>
+				<textField pattern="HH.mm">
+					<reportElement x="411" y="180" width="111" height="20" forecolor="#FFFFFF" uuid="85cc05b9-11f9-407f-bd5a-3ab3742d10d4"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jam_berangkat}+" WIB"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="194" y="187" width="165" height="20" forecolor="#FFFFFF" uuid="e012ae2b-bf02-4462-9919-5014323c5fde"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tujuan}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="194" y="99" width="165" height="20" forecolor="#FFFFFF" uuid="ed7b0120-0565-4e60-bcc9-df7e50e2b1c2"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nomor_kursi}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="7" y="44" width="539" height="3" forecolor="#FFFFFF" uuid="899a066e-c96d-4833-ae9c-9e874b30776e"/>
+				</line>
+				<image>
+					<reportElement x="20" y="9" width="29" height="28" uuid="ce3d503f-3b08-4e85-832e-70e0f2df9fbf"/>
+					<imageExpression><![CDATA[$P{parLogo}+"logo.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="56" y="9" width="469" height="28" forecolor="#FFFFFF" uuid="090d964d-b5ec-4de3-959d-eda08e2e4550"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TIKET BUS SINAR JAYA TERMINAL KAJEN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="38" y="68" width="142" height="20" forecolor="#FFFFFF" uuid="b3fb9724-b5c4-49ea-916f-da5efb7e66d5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nama Penumpang]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="38" y="99" width="142" height="20" forecolor="#FFFFFF" uuid="87a00bab-6536-4762-a0c4-fdefddc8f9ad"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nomor Kursi]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="38" y="130" width="142" height="20" forecolor="#FFFFFF" uuid="63e1e389-da8f-4b7c-ab9e-98d094466ee7"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kelas Bus]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="38" y="160" width="142" height="20" forecolor="#FFFFFF" uuid="b2e14187-1c86-4d44-a903-a12addebf25c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Harga Tiket]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="38" y="187" width="142" height="20" forecolor="#FFFFFF" uuid="00222ef9-7eb6-4982-b4b9-edbe30913202"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tujuan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="411" y="140" width="111" height="20" forecolor="#FFFFFF" uuid="1dc3b6d4-3218-45e2-9fc4-f1c4f4117198"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Berangkat :]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>
